@@ -1,5 +1,8 @@
 require('dotenv').config();
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const {
+  MongoClient,
+  ServerApiVersion
+} = require('mongodb');
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(process.env.DATABASE_URL, {
@@ -10,32 +13,26 @@ const client = new MongoClient(process.env.DATABASE_URL, {
   }
 });
 
+let db;
+
 async function run() {
+
+  if (db) return db;
+
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
     // Send a ping to confirm a successful connection
-      await client.db("admin").command({ ping: 1 });
-      await createListing(client, { name: "New Listing", description: "A beautiful place to stay", price: 100 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+    db = client.db("sample_airbnb");
+    console.log(`✅ [DB] Connected to MongoDB database: sample_airbnb`);
+    return db;
+  } catch (err) {
+    console.error("❌ DB connection error:", err);
+    throw err;
   }
 }
-run().catch(console.dir);
 
-
-async function listDatabases(client){
-    databasesList = await client.db().admin().listDatabases();
- 
-    console.log("Databases:");
-    databasesList.databases.forEach(db => {
-        console.log(` - ${db.name}`);
-    });
-}
-
-async function createListing(client, newListing){
-    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
-    console.log(`New listing created with the following id: ${result.insertedId}`);
-}
+// run().catch(console.dir);
+module.exports = {
+  run
+};

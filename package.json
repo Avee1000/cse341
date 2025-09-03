@@ -4,7 +4,7 @@
   "description": "Starter project for CSE 340",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "dev": "nodemon server.js"
   },
   "author": "",
@@ -15,6 +15,7 @@
     "connect-flash": "^0.1.1",
     "connect-pg-simple": "^10.0.0",
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
@@ -27,6 +28,10 @@
     "pg": "^8.8.0"
   },
   "devDependencies": {
+    "concurrently": "^9.2.1",
+    "connect-livereload": "^0.6.1",
+    "live-server": "^1.2.2",
+    "livereload": "^0.10.3",
     "nodemon": "^3.1.0"
   },
   "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"
