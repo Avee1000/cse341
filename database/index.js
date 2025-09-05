@@ -15,7 +15,7 @@ const client = new MongoClient(process.env.DATABASE_URL, {
 
 let db;
 
-async function run() {
+async function initDb() {
 
   if (db) return db;
 
@@ -23,8 +23,8 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
     // Send a ping to confirm a successful connection
-    db = client.db("sample_airbnb");
-    console.log(`✅ [DB] Connected to MongoDB database: sample_airbnb`);
+    db = client.db("project1");
+    console.log(`✅ [DB] Connected to MongoDB database: project1`);
     return db;
   } catch (err) {
     console.error("❌ DB connection error:", err);
@@ -32,7 +32,15 @@ async function run() {
   }
 }
 
+const getDatabase = async () => {
+  if (!db) {
+    throw new Error("Database not initialized. Call initDb() first.");
+  }
+  return db;
+};
+
 // run().catch(console.dir);
 module.exports = {
-  run
+  initDb,
+  getDatabase
 };

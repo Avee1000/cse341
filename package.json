@@ -28,6 +28,7 @@
     "pg": "^8.8.0"
   },
   "devDependencies": {
+    "@types/node": "^24.3.1",
     "concurrently": "^9.2.1",
     "connect-livereload": "^0.6.1",
     "live-server": "^1.2.2",

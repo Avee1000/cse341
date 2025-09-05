@@ -1,20 +1,15 @@
 const express = require("express");
 const path = require("path");
-const { run } = require("./database");
+const { initDb } = require("./database");
 
 const app = express();
+
+const contactsRoute = require("./routes/contacts-route");
 
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-// Mount routes
-// app.use("/api", sampleRoutes);
-
-app.get("/api/professional", (req, res) => { 
-  res.json(data);
-})
+app.use("/api/contacts", contactsRoute);
 
 app.use((err, req, res, next) => {
   console.error("🔥 Global error handler:", err.message);
@@ -24,7 +19,7 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 8080;
 // First connect to DB, then start server
-run()
+initDb()
   .then(() => {
     app.listen(PORT, () =>
       console.log(`🚀 Server running on http://localhost:${PORT}`)
