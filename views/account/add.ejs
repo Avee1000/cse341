@@ -1,0 +1,41 @@
+  <% if (errors) { %>
+    <div id="messages">
+      <ul class="error">
+        <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
+
+
+<div class="register-container">
+  <h1 class="text-center">Add User</h1>
+</div>
+
+
+
+<div class="container-lg d-flex flex-column justify-content-center align-items-center">
+    <div class="container">
+        <form action="users/api/usercreate" method="post" class=" d-flex justify-content-center align-items-center flex-column">
+            <label for="firstName">First Name
+                <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+            </label>
+            <label for="lastName">Last Name
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+            </label>
+            <label for="email"> Email Address
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </label>
+            <label for="favoritColor">Favorite Color
+                <input type="text" name="favoritColor" id="favoritColor" placeholder="Favorite Color" required>
+            </label>
+            <label for="birthday" class="text-center">Birthday
+                <input type="date" name="birthday" id="birthday" placeholder="Birthday" required>
+            </label>
+
+            <button type="submit" class="mt-4">Submit</button>
+        </form>
+    </div>
+</div>
+

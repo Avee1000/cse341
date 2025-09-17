@@ -1,7 +1,7 @@
 const route = require("express").Router();
 const contactController = require("../controllers/contactController");
 
-route.get("/", contactController.getAllContacts);
+route.get("/create", contactController.buildCreateContact);
 
 route.get("/:id", contactController.getOneContact);
 
