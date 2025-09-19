@@ -1,1 +1,13 @@
-GET http://localhost:8080/api/contacts/68ca9dead0ba88f5a98c33a3
+GET http://localhost:8080/users/api/contact/
+
+####
+PUT http://localhost:8080/users/api/userupdate/68cd53334e66cad470b4e9e0
+Content-Type: application/json
+
+{
+  "firstName": "Lahor",
+  "lastName": "edddddddddd",
+  "email": "john@example.com",
+  "favoriteColor": "Blue",
+  "birthday": "2000-01-01"
+}
