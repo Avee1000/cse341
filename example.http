@@ -1,16 +1,17 @@
 GET http://localhost:8080/users/api/contact/
 
 ####
-PUT http://localhost:8080/users/api/userupdate/68cd53334e66cad470b4e9e0
+PUT http://localhost:8080/users/api/userupdate/68ce91a1222113298d7cfb1f
 Content-Type: application/json
 
 {
-  "firstName": "Lahor",
-  "lastName": "edddddddddd",
-  "email": "john@example.com",
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "JaneDoe@example.com",
   "favoriteColor": "Blue",
   "birthday": "2000-01-01"
 }
 
 ####
-DELETE  http://localhost:8080/users/api/userdelete/68cab9668db660e05e7b401d
+DELETE  http://localhost:8080/users/api/userdelete/68ce8b7b85d5e6f334db5500
+

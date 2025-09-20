@@ -4,7 +4,6 @@ const doc = {
         title: 'User Contacts API',
         description: 'API for managing user contacts',
     },
-    host: 'localhost:8080/users',
     schemes: ['http'],
 };
 
