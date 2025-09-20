@@ -11,3 +11,6 @@ Content-Type: application/json
   "favoriteColor": "Blue",
   "birthday": "2000-01-01"
 }
+
+####
+DELETE  http://localhost:8080/users/api/userdelete/68cab9668db660e05e7b401d

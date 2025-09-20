@@ -9,6 +9,8 @@ const app = express();
 const contactsRoute = require("./routes/contacts-route");
 const usersRoute = require("./routes/users-route");
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 
 /* ***********************
@@ -20,6 +22,8 @@ app.set("layout", "./layouts/layout") // not at views root
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+
 
 app.use(static)
 app.get("/", (req, res,) => {

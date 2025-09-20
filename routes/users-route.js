@@ -9,4 +9,6 @@ router.post("/api/usercreate", contactController.createContact);
 
 router.put("/api/userupdate/:id", contactController.editContact);
 
+router.delete("/api/userdelete/:id", contactController.deleteContact);
+
 module.exports = router;

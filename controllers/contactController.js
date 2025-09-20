@@ -91,8 +91,20 @@ try {
 
 contactController.createContact = async (req, res, next) => {
     try {
-        const newContact = req.body;
-        console.log(newContact);
+        const { firstName,
+            lastName, 
+            email,
+            favoriteColor,
+            birthday
+        } = req.body;
+
+        const newContact = {
+  firstName,
+  lastName,
+  email,
+  favoriteColor,
+  birthday
+};
         const result = await (await mongodb.getDatabase()).collection("contacts").insertOne(newContact);
         if (result) {
             res.status(201).json(result)
@@ -107,8 +119,6 @@ contactController.editContact = async (req, res, next) => {
     try {
         const userId = req.params.id;
         const updatedContact = req.body;
-        console.log(updatedContact);
-
 
         const result = await (await mongodb.getDatabase()).collection("contacts").updateOne(
             { _id: new ObjectId(userId) },
@@ -123,12 +133,29 @@ contactController.editContact = async (req, res, next) => {
             }
         );
         if (result) {
-            console.log(result);
+            console.log("Contact updated successfully");
             res.status(201).json(result)
         }
 
     } catch (error) {
         console.error("🔥 Error updating contact:", error);
+    }
+}
+
+contactController.deleteContact = async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const result = await (await mongodb.getDatabase()).collection("contacts").deleteOne(
+            { _id: new ObjectId(userId) }
+        );
+        if (result) {
+            console.log("Contact deleted successfully");
+            res.status(201).json(result)
+        }
+
+    } catch (error) {
+        console.error("🔥 Error deleting contact:", error);
+        res.status(500).json({ error: "Failed to delete contact" });
     }
 }
 
