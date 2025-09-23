@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Contact = db.contacts;
 const contactController = {};
 
-contactController.buildCreateContact = (req, res, next) => { 
+contactController.buildCreateContact = (req, res, next) => {
     try {
         res.render("account/add", {
             title: "Create Contact",
@@ -17,33 +17,32 @@ contactController.buildCreateContact = (req, res, next) => {
 }
 
 
-contactController.buildEditContact = async (req, res, next) => { 
+contactController.buildEditContact = async (req, res, next) => {
     try {
-        const { id } = req.params;
-        const userId = new ObjectId(id);
+        const {
+            id
+        } = req.params;
 
-        if (!ObjectId.isValid(id)) return null;
-
-        const user = await (await mongodb.getDatabase()).collection("contacts").findOne({
-            _id:userId
-        });
+        
+        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+            return next({ status: 404, message: "Contact Not Found" });
+        }
+        const user = await Contact.findById(id);
 
         if (!user) {
-            return res.status(404).json({
-                error: "Contact not found"
-            });
+            return next({ status: 404, message: "Contact Not Found" });
         }
 
         console.log(user);
         res.render("account/update", {
-                    title: "Edit Contact",
+            title: "Edit Contact",
             errors: null,
-                    _id: user._id,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email,
-                    favoriteColor: user.favoriteColor,
-                    birthday: user.birthday
+            _id: user._id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            favoriteColor: user.favoriteColor,
+            birthday: user.birthday
         });
     } catch (error) {
         next(error);
@@ -58,7 +57,9 @@ contactController.getAllContacts = async (req, res, next) => {
         res.status(200).json(allContacts);
     } catch (error) {
         console.error("🔥 Error fetching contacts:", error);
-        res.status(500).json({ error: "Failed to fetch contacts" });
+        res.status(500).json({
+            error: "Failed to fetch contacts"
+        });
     }
 }
 
@@ -77,9 +78,11 @@ contactController.getAllContacts = async (req, res, next) => {
 // };
 
 /// GET ONE CONTACT MONGOOSE
-contactController.getOneContact = async (req, res, next) => { 
+contactController.getOneContact = async (req, res, next) => {
     try {
-        const { id } = req.params;
+        const {
+            id
+        } = req.params;
 
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return res.status(400).json({
@@ -87,13 +90,17 @@ contactController.getOneContact = async (req, res, next) => {
             });
         }
 
-        const contact = await Contact.find({ _id: id });
+        const contact = await Contact.find({
+            _id: id
+        });
 
         res.setHeader("Content-Type", "application/json");
         res.status(200).json(contact);
     } catch (error) {
         console.error("🔥 Error fetching contact:", error);
-        res.status(500).json({ error: "Failed to fetch contact" });
+        res.status(500).json({
+            error: "Failed to fetch contact"
+        });
     }
 }
 /// GET ONE CONTACT MONGODB_URI
@@ -127,14 +134,15 @@ contactController.getOneContact = async (req, res, next) => {
 
 
 /// CREATE CONTACT MONGOOSE
-contactController.createContact = async (req, res, next) => { 
+contactController.createContact = async (req, res, next) => {
     try {
-        const { firstName,
-            lastName, 
+        const {
+            firstName,
+            lastName,
             email,
             favoriteColor,
             birthday
-            } = req.body;
+        } = req.body;
 
         const newContact = {
             firstName,
@@ -187,19 +195,20 @@ contactController.createContact = async (req, res, next) => {
 
 
 /// UPDATE CONTACT MONGOOSE
-contactController.editContact = async (req, res, next) => { 
+contactController.editContact = async (req, res, next) => {
     try {
         const userId = req.params.id;
         const updatedContact = req.body;
 
-        const result = await Contact.findByIdAndUpdate(userId, updatedContact, { new: true });
+        const result = await Contact.findByIdAndUpdate(userId, updatedContact, {
+            new: true
+        });
         if (result) {
             console.log("Contact updated successfully");
             res.status(201).json(result)
         }
-
     } catch (error) {
-        console.error("🔥 Error updating contact:", error);
+        throw new Error("🔥 Error updating contact:", error);
     }
 }
 /// UPDATE CONTACT MONGODB_URI
@@ -233,7 +242,7 @@ contactController.editContact = async (req, res, next) => {
 
 
 /// DELETE CONTACT MONGOOSE
-contactController.deleteContact = async (req, res, next) => { 
+contactController.deleteContact = async (req, res, next) => {
     try {
         const userId = req.params.id;
         const result = await Contact.findByIdAndDelete(userId);
@@ -244,7 +253,9 @@ contactController.deleteContact = async (req, res, next) => {
 
     } catch (error) {
         console.error("🔥 Error deleting contact:", error);
-        res.status(500).json({ error: "Failed to delete contact" });
+        res.status(500).json({
+            error: "Failed to delete contact"
+        });
     }
 }
 /// DELETE CONTACT MONGODB_URI

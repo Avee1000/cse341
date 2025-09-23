@@ -5,6 +5,7 @@ const { initDb } = require("./database");
 const static = require("./routes/static");
 const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema/schema');
+const utilities = require("./utilities/");
 
 const app = express();
 
@@ -31,17 +32,34 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 app.use(static)
-app.get("/", (req, res,) => {
-    res.render("index", { title: "Home" });
- })
+app.get("/", utilities.handleErrors((req, res) => {
+    res.render("indxex", { title: "Home" });
+}))
 app.use("/", contactsRoute);
 app.use("/users", usersRoute);
+// File Not Found Route - must be last route in list
+app.use(async (req, res, next) => {
+  next({status: 404, message: 'Sorry, we appear to have lost that page.'})
+})
 
-app.use((err, req, res, next) => {
-  console.error("🔥 Global error handler:", err.message);
-  res.status(500).json({ error: "Something went wrong" });
-});
 
+
+// app.use((err, req, res, next) => {
+//   console.error("🔥 Global error handler:", err.message);
+//   res.status(500).json({ error: "Something went wrong" });
+// });
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (err, req, res, next) => {
+  console.error(`Error at: "${req.originalUrl}": ${err.message}`)
+  if(err.status == 404){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
+  res.render("errors/error", {
+    title: err.status || 'Server Error',
+    message
+  })
+})
 
 // const PORT = process.env.PORT || 8080;
 // // First connect to DB, then start server

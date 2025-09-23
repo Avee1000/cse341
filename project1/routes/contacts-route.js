@@ -5,6 +5,6 @@ route.get("/create", contactController.buildCreateContact);
 
 route.get("/edit/:id", contactController.buildEditContact);
 
-route.get("/:id", contactController.getOneContact);
+// route.get("/:id", contactController.getOneContact);
 
 module.exports = route;

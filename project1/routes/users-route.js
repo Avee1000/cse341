@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const contactController = require("../controllers/contactController");
+const utilities = require("../utilities/")
 
 router.get("/api/contact", contactController.getAllContacts);
 
