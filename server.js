@@ -2,7 +2,9 @@ const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const path = require("path");
 const { initDb } = require("./database");
-const static = require("./routes/static")
+const static = require("./routes/static");
+const { graphqlHTTP } = require('express-graphql');
+const schema = require('./schema/schema');
 
 const app = express();
 
@@ -23,7 +25,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-
+app.use('/graphql', graphqlHTTP({
+  schema: schema,
+  graphiql: true,
+}));
 
 app.use(static)
 app.get("/", (req, res,) => {
@@ -38,15 +43,29 @@ app.use((err, req, res, next) => {
 });
 
 
-const PORT = process.env.PORT || 8080;
-// First connect to DB, then start server
-initDb()
+// const PORT = process.env.PORT || 8080;
+// // First connect to DB, then start server
+// initDb()
+//   .then(() => {
+//     app.listen(PORT, () =>
+//       console.log(`🚀 Server running on http://localhost:${PORT}`)
+//     );
+//   })
+//   .catch((err) => {
+//     console.error("❌ Failed to connect to MongoDB:", err);
+//     process.exit(1);
+//   });
+const db = require('./models');
+db.mongoose
+  .connect(db.url)
   .then(() => {
-    app.listen(PORT, () =>
-      console.log(`🚀 Server running on http://localhost:${PORT}`)
-    );
+    console.log('✅ Connected to the database!');
   })
   .catch((err) => {
-    console.error("❌ Failed to connect to MongoDB:", err);
-    process.exit(1);
+    console.log('❌ Cannot connect to the database!', err);
+    process.exit();
   });
+
+const PORT = process.env.PORT || 8080;
+console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(PORT);

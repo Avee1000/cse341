@@ -5,10 +5,10 @@
     "description": "API for managing user contacts",
     "version": "1.0.0"
   },
-  "host": "cse341-9s0u.onrender.com/users",
+  "host": "localhost:8080/users",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/api/contact": {
