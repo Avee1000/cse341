@@ -12,6 +12,9 @@ const utilities = require("../utilities");
 
 // router.delete("/api/userdelete/:id", contactController.deleteContact);
 
-router.get("/users/api/cars/insert", utilities.handleErrors(invCont.insertClassifications));
+router.get("/users/api/cars/:id", utilities.handleErrors(invCont.getOneCar));
+
+router.get("/users/api/cars", utilities.handleErrors(invCont.getAllCars));
+
 
 module.exports = router;

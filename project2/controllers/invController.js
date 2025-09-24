@@ -5,7 +5,6 @@ const Classification = db.classification;
 const Cars = db.cars;
 const mongoose = require('mongoose');
 const invCont = {};
-const classification = require("../class.json")
 
 invCont.buildCreateContact = (req, res, next) => {
     try {
@@ -51,17 +50,40 @@ invCont.buildEditContact = async (req, res, next) => {
     }
 }
 
-invCont.insertClassifications = async (req, res, next) => {
+invCont.getOneCar = async (req, res, next) => { 
     try {
-        const classifications = await Classification.insertMany(classification);
-        if (classifications) {
-            res.status(200).json({ message: "Classifications inserted successfully", data: classifications });
-        } 
-        console.log("✅ Cars inserted successfully");
+        const { id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+            return next({ status: 404, message: "Car Not Found" });
+        }
+        const car = await Cars.find({
+            _id: id
+        });
 
+        if (!car) {
+            return next({ status: 404, message: "Car Not Found" });
+        }
+        res.status(200).json(car);
     } catch (error) {
-        console.error("❌ Error inserting classifications:", error);
-        res.status(500).json({ message: "Failed to insert classifications", error });
+        next(error);
+    }
+}
+
+
+invCont.getAllCars = async (req, res, next) => { 
+    try {
+        const car = await Cars.find();
+
+        if (!car) {
+            return next({ status: 404, message: "Car Not Found" });
+        }
+
+        res.render("inventory/cars", {
+            title: "All Cars",
+            cars: car
+        })
+    } catch (error) {
+        next(error);
     }
 }
 

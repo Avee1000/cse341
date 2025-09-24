@@ -4,444 +4,364 @@
     "model": "Camaro",
     "year": 2018,
     "description": "If you want to look cool this is the car you need! This car has great performance at an affordable price. Own it today!",
-    "image": "/images/camaro.jpg",
-    "thumbnail": "/images/camaro-tn.jpg",
+    "images": {
+      "main": "/images/camaro.jpg",
+      "thumbnail": "/images/camaro-tn.jpg"
+    },
     "price": 25000,
     "miles": 101222,
     "color": "Silver",
-    "classification_id": 2
+    "classification": "Sports Car"
   },
   {
     "make": "Batmobile",
     "model": "Custom",
     "year": 2007,
-    "description": "Ever want to be a super hero? Now you can with the Batmobile. This car allows you to switch to bike mode allowing you to easily maneuver through traffic during rush hour.",
-    "image": "/images/batmobile.jpg",
-    "thumbnail": "/images/batmobile-tn.jpg",
+    "description": "Ever want to be a super hero? now you can with the batmobile. This car allows you to switch to bike mode allowing you to easily maneuver through traffic during rush hour.",
+    "images": {
+      "main": "/images/batmobile.jpg",
+      "thumbnail": "/images/batmobile-tn.jpg"
+    },
     "price": 65000,
     "miles": 29887,
     "color": "Black",
-    "classification_id": 1
+    "classification": "Truck"
   },
   {
     "make": "FBI",
     "model": "Surveillance Van",
     "year": 2016,
-    "description": "Do you like police shows? You will feel right at home driving this van, comes complete with surveillance equipment for an extra fee of $2,000 a month.",
-    "image": "/images/survan.jpg",
-    "thumbnail": "/images/survan-tn.jpg",
+    "description": "Do you like police shows? You will feel right at home driving this van, comes complete with surveillance equipments for an extra fee of $2,000 a month.",
+    "images": {
+      "main": "/images/survan.jpg",
+      "thumbnail": "/images/survan-tn.jpg"
+    },
     "price": 20000,
     "miles": 19851,
     "color": "Brown",
-    "classification_id": 1
+    "classification": "Truck"
   },
   {
     "make": "Dog",
     "model": "Car",
     "year": 1997,
-    "description": "Do you like dogs? Well this car is for you. Straight from the 90s from Aspen, Colorado we have the original Dog Car complete with fluffy ears.",
-    "image": "/images/dog-car.jpg",
-    "thumbnail": "/images/dog-car-tn.jpg",
+    "description": "Do you like dogs? Well this car is for you straight from the 90s from Aspen, Colorado we have the original Dog Car complete with fluffy ears.",
+    "images": {
+      "main": "/images/dog-car.jpg",
+      "thumbnail": "/images/dog-car-tn.jpg"
+    },
     "price": 35000,
     "miles": 71632,
     "color": "White",
-    "classification_id": 1
+    "classification": "Truck"
   },
   {
     "make": "Jeep",
     "model": "Wrangler",
     "year": 2019,
-    "description": "The Jeep Wrangler is small and compact with enough power to get you where you want to go. It's great for everyday driving as well as offroading whether on rocks or in the mud!",
-    "image": "/images/wrangler.jpg",
-    "thumbnail": "/images/wrangler-tn.jpg",
+    "description": "The Jeep Wrangler is small and compact with enough power to get you where you want to go. Its great for everyday driving as well as offroading whether that be on rocks or in the mud!",
+    "images": {
+      "main": "/images/wrangler.jpg",
+      "thumbnail": "/images/wrangler-tn.jpg"
+    },
     "price": 28045,
     "miles": 41205,
     "color": "Yellow",
-    "classification_id": 3
+    "classification": "SUV"
   },
   {
     "make": "Lamborghini",
     "model": "Aventador",
     "year": 2016,
     "description": "This V-12 engine packs a punch in this sporty car. Make sure you wear your seatbelt and obey all traffic laws.",
-    "image": "/images/adventador.jpg",
-    "thumbnail": "/images/adventador-tn.jpg",
+    "images": {
+      "main": "/images/adventador.jpg",
+      "thumbnail": "/images/adventador-tn.jpg"
+    },
     "price": 417650,
     "miles": 71003,
     "color": "Blue",
-    "classification_id": 2
+    "classification": "Sports Car"
   },
   {
     "make": "Aerocar International",
     "model": "Aerocar",
     "year": 1963,
     "description": "Are you sick of rush hour traffic? This car converts into an airplane to get you where you are going fast. Only 6 of these were made, get them while they last!",
-    "image": "/images/aerocar.jpg",
-    "thumbnail": "/images/aerocar-tn.jpg",
+    "images": {
+      "main": "/images/aerocar.jpg",
+      "thumbnail": "/images/aerocar-tn.jpg"
+    },
     "price": 700000,
     "miles": 18956,
     "color": "Red",
-    "classification_id": 1
+    "classification": "Truck"
   },
   {
     "make": "Monster",
     "model": "Truck",
     "year": 1995,
-    "description": "Most trucks are for working, this one is for fun. This beast comes with 60 inch tires giving you the traction needed to jump and roll in the mud.",
-    "image": "/images/monster-truck.jpg",
-    "thumbnail": "/images/monster-truck-tn.jpg",
+    "description": "Most trucks are for working, this one is for fun. This beast comes with 60 inch tires giving you traction needed to jump and roll in the mud.",
+    "images": {
+      "main": "/images/monster-truck.jpg",
+      "thumbnail": "/images/monster-truck-tn.jpg"
+    },
     "price": 150000,
     "miles": 3998,
     "color": "Purple",
-    "classification_id": 1
+    "classification": "Truck"
   },
   {
     "make": "Cadillac",
     "model": "Escalade",
     "year": 2019,
-    "description": "This stylin' car is great for any occasion from going to the beach to meeting the president. The luxurious inside makes this car a home away from home.",
-    "image": "/images/escalade.jpg",
-    "thumbnail": "/images/escalade-tn.jpg",
+    "description": "This stylin car is great for any occasion from going to the beach to meeting the president. The luxurious inside makes this car a home away from home.",
+    "images": {
+      "main": "/images/escalade.jpg",
+      "thumbnail": "/images/escalade-tn.jpg"
+    },
     "price": 75195,
     "miles": 41958,
     "color": "Black",
-    "classification_id": 4
+    "classification": "Luxury"
   },
   {
     "make": "GM",
     "model": "Hummer",
     "year": 2016,
-    "description": "Do you have 6 kids and like to go offroading? The Hummer gives you space with an engine to get you out of any muddy or rocky situation.",
-    "image": "/images/hummer.jpg",
-    "thumbnail": "/images/hummer-tn.jpg",
+    "description": "Do you have 6 kids and like to go offroading? The Hummer gives you the small interiors with an engine to get you out of any muddy or rocky situation.",
+    "images": {
+      "main": "/images/hummer.jpg",
+      "thumbnail": "/images/hummer-tn.jpg"
+    },
     "price": 58800,
     "miles": 56564,
     "color": "Yellow",
-    "classification_id": 4
+    "classification": "Luxury"
   },
   {
     "make": "Mechanic",
     "model": "Special",
     "year": 1964,
-    "description": "Not sure where this car came from, however with a little TLC it will run as good as new.",
-    "image": "/images/mechanic.jpg",
-    "thumbnail": "/images/mechanic-tn.jpg",
+    "description": "Not sure where this car came from. However with a little TLC it will run as good as new.",
+    "images": {
+      "main": "/images/mechanic.jpg",
+      "thumbnail": "/images/mechanic-tn.jpg"
+    },
     "price": 100,
     "miles": 200125,
     "color": "Rust",
-    "classification_id": 5
+    "classification": "Classic"
   },
   {
     "make": "Ford",
     "model": "Model T",
     "year": 1921,
     "description": "The Ford Model T can be a bit tricky to drive. It was the first car to be put into production. You can get it in any color you want as long as it is black.",
-    "image": "/images/model-t.jpg",
-    "thumbnail": "/images/model-t-tn.jpg",
+    "images": {
+      "main": "/images/model-t.jpg",
+      "thumbnail": "/images/model-t-tn.jpg"
+    },
     "price": 30000,
     "miles": 26357,
     "color": "Black",
-    "classification_id": 5
+    "classification": "Classic"
   },
   {
     "make": "Mystery",
     "model": "Machine",
     "year": 1999,
     "description": "Scooby and the gang always found luck in solving their mysteries because of their 4 wheel drive Mystery Machine. This Van will help you do whatever job you are required to with a success rate of 100%.",
-    "image": "/images/mystery-van.jpg",
-    "thumbnail": "/images/mystery-van-tn.jpg",
+    "images": {
+      "main": "/images/mystery-van.jpg",
+      "thumbnail": "/images/mystery-van-tn.jpg"
+    },
     "price": 10000,
     "miles": 128564,
     "color": "Green",
-    "classification_id": 1
+    "classification": "Truck"
   },
   {
     "make": "Spartan",
     "model": "Fire Truck",
     "year": 2012,
     "description": "Emergencies happen often. Be prepared with this Spartan fire truck. Comes complete with 1000 ft. of hose and a 1000 gallon tank.",
-    "image": "/images/fire-truck.jpg",
-    "thumbnail": "/images/fire-truck-tn.jpg",
+    "images": {
+      "main": "/images/fire-truck.jpg",
+      "thumbnail": "/images/fire-truck-tn.jpg"
+    },
     "price": 50000,
     "miles": 38522,
     "color": "Red",
-    "classification_id": 4
+    "classification": "Luxury"
   },
   {
     "make": "Ford",
     "model": "Crown Victoria",
     "year": 2013,
     "description": "After the police force updated their fleet these cars are now available to the public! These cars come equipped with the siren which is convenient for college students running late to class.",
-    "image": "/images/crwn-vic.jpg",
-    "thumbnail": "/images/crwn-vic-tn.jpg",
+    "images": {
+      "main": "/images/crwn-vic.jpg",
+      "thumbnail": "/images/crwn-vic-tn.jpg"
+    },
     "price": 10000,
     "miles": 108247,
     "color": "White",
-    "classification_id": 5
+    "classification": "Classic"
   },
-  {
-    "make": "Tesla",
-    "model": "Model S",
-    "year": 2022,
-    "description": "Fast electric luxury sedan with autopilot capabilities.",
-    "image": "/images/tesla-model-s.jpg",
-    "thumbnail": "/images/tesla-model-s-tn.jpg",
-    "price": 79999,
-    "miles": 12000,
-    "color": "White",
-    "classification_id": 2
-  },
+
   {
     "make": "Toyota",
     "model": "Corolla",
     "year": 2020,
     "description": "Reliable and fuel efficient. Great for commuting.",
-    "image": "/images/corolla.jpg",
-    "thumbnail": "/images/corolla-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 18000,
     "miles": 45000,
     "color": "Blue",
-    "classification_id": 3
+    "classification": "SUV"
   },
   {
     "make": "Honda",
     "model": "Civic",
     "year": 2019,
     "description": "Compact sedan known for reliability and resale value.",
-    "image": "/images/civic.jpg",
-    "thumbnail": "/images/civic-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 17500,
     "miles": 53000,
     "color": "Silver",
-    "classification_id": 3
+    "classification": "SUV"
   },
   {
     "make": "BMW",
     "model": "X5",
     "year": 2021,
     "description": "Luxury SUV with strong performance and sleek design.",
-    "image": "/images/bmw-x5.jpg",
-    "thumbnail": "/images/bmw-x5-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 60000,
     "miles": 15000,
     "color": "Black",
-    "classification_id": 4
+    "classification": "Luxury"
   },
   {
     "make": "Audi",
     "model": "R8",
     "year": 2018,
     "description": "High-performance supercar with V10 engine.",
-    "image": "/images/audi-r8.jpg",
-    "thumbnail": "/images/audi-r8-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 140000,
     "miles": 20000,
     "color": "Red",
-    "classification_id": 2
-  },
-  {
-    "make": "Mercedes-Benz",
-    "model": "E-Class",
-    "year": 2020,
-    "description": "Executive sedan with luxury features and smooth ride.",
-    "image": "/images/mercedes-e.jpg",
-    "thumbnail": "/images/mercedes-e-tn.jpg",
-    "price": 55000,
-    "miles": 25000,
-    "color": "White",
-    "classification_id": 2
+    "classification": "Sports Car"
   },
   {
     "make": "Ford",
     "model": "F-150",
     "year": 2021,
     "description": "The all-time best-selling pickup truck in America.",
-    "image": "/images/f150.jpg",
-    "thumbnail": "/images/f150-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 40000,
     "miles": 20000,
     "color": "Gray",
-    "classification_id": 4
+    "classification": "Luxury"
   },
   {
-    "make": "Chevrolet",
-    "model": "Silverado",
-    "year": 2019,
-    "description": "Full-size pickup truck built for work and play.",
-    "image": "/images/silverado.jpg",
-    "thumbnail": "/images/silverado-tn.jpg",
-    "price": 35000,
-    "miles": 37000,
-    "color": "Blue",
-    "classification_id": 4
-  },
-  {
-    "make": "Nissan",
-    "model": "Altima",
-    "year": 2021,
-    "description": "A balanced sedan with comfort and fuel economy.",
-    "image": "/images/altima.jpg",
-    "thumbnail": "/images/altima-tn.jpg",
-    "price": 24000,
-    "miles": 18000,
-    "color": "Gray",
-    "classification_id": 3
+    "make": "Tesla",
+    "model": "Model S",
+    "year": 2022,
+    "description": "Fast electric luxury sedan with autopilot capabilities.",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
+    "price": 79999,
+    "miles": 12000,
+    "color": "White",
+    "classification": "Sports Car"
   },
   {
     "make": "Kia",
     "model": "Soul",
     "year": 2020,
     "description": "Compact crossover with unique boxy design.",
-    "image": "/images/kia-soul.jpg",
-    "thumbnail": "/images/kia-soul-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 17500,
     "miles": 30000,
     "color": "Green",
-    "classification_id": 3
-  },
-  {
-    "make": "Hyundai",
-    "model": "Tucson",
-    "year": 2021,
-    "description": "Practical and efficient compact SUV.",
-    "image": "/images/tucson.jpg",
-    "thumbnail": "/images/tucson-tn.jpg",
-    "price": 26000,
-    "miles": 22000,
-    "color": "Blue",
-    "classification_id": 4
+    "classification": "SUV"
   },
   {
     "make": "Mazda",
     "model": "MX-5 Miata",
     "year": 2018,
     "description": "Lightweight convertible roadster, fun to drive.",
-    "image": "/images/miata.jpg",
-    "thumbnail": "/images/miata-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 23000,
     "miles": 35000,
     "color": "Red",
-    "classification_id": 2
-  },
-  {
-    "make": "Porsche",
-    "model": "911",
-    "year": 2020,
-    "description": "Iconic sports car delivering performance and style.",
-    "image": "/images/911.jpg",
-    "thumbnail": "/images/911-tn.jpg",
-    "price": 125000,
-    "miles": 12000,
-    "color": "Yellow",
-    "classification_id": 2
-  },
-  {
-    "make": "Volkswagen",
-    "model": "Beetle",
-    "year": 1972,
-    "description": "Classic people's car with timeless design.",
-    "image": "/images/beetle.jpg",
-    "thumbnail": "/images/beetle-tn.jpg",
-    "price": 15000,
-    "miles": 99000,
-    "color": "Orange",
-    "classification_id": 5
-  },
-  {
-    "make": "Dodge",
-    "model": "Charger",
-    "year": 2021,
-    "description": "American muscle car with bold looks.",
-    "image": "/images/charger.jpg",
-    "thumbnail": "/images/charger-tn.jpg",
-    "price": 35000,
-    "miles": 22000,
-    "color": "Black",
-    "classification_id": 2
+    "classification": "Sports Car"
   },
   {
     "make": "Subaru",
     "model": "Outback",
     "year": 2019,
     "description": "All-wheel-drive wagon ready for adventures.",
-    "image": "/images/outback.jpg",
-    "thumbnail": "/images/outback-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 27000,
     "miles": 40000,
     "color": "Silver",
-    "classification_id": 4
+    "classification": "SUV"
   },
   {
     "make": "Ferrari",
     "model": "488",
     "year": 2017,
     "description": "Exotic supercar with twin-turbo V8.",
-    "image": "/images/ferrari-488.jpg",
-    "thumbnail": "/images/ferrari-488-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 250000,
     "miles": 14000,
     "color": "Red",
-    "classification_id": 2
+    "classification": "Sports Car"
   },
   {
     "make": "Rolls-Royce",
     "model": "Phantom",
     "year": 2020,
     "description": "Ultimate luxury saloon with unmatched presence.",
-    "image": "/images/phantom.jpg",
-    "thumbnail": "/images/phantom-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 450000,
     "miles": 5000,
     "color": "Black",
-    "classification_id": 2
-  },
-  {
-    "make": "Bugatti",
-    "model": "Chiron",
-    "year": 2019,
-    "description": "Hypercar with over 1,500 horsepower.",
-    "image": "/images/chiron.jpg",
-    "thumbnail": "/images/chiron-tn.jpg",
-    "price": 3000000,
-    "miles": 2000,
-    "color": "Blue",
-    "classification_id": 2
+    "classification": "Luxury"
   },
   {
     "make": "Toyota",
     "model": "Supra",
     "year": 2021,
     "description": "Modern revival of a Japanese sports legend.",
-    "image": "/images/supra.jpg",
-    "thumbnail": "/images/supra-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 48000,
     "miles": 18000,
     "color": "White",
-    "classification_id": 2
+    "classification": "Sports Car"
+  },
+  {
+    "make": "Volkswagen",
+    "model": "Beetle",
+    "year": 1972,
+    "description": "Classic people's car with timeless design.",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
+    "price": 15000,
+    "miles": 99000,
+    "color": "Orange",
+    "classification": "Classic"
   },
   {
     "make": "Pontiac",
     "model": "Firebird",
     "year": 1977,
     "description": "Classic American muscle, Smokey and the Bandit edition.",
-    "image": "/images/firebird.jpg",
-    "thumbnail": "/images/firebird-tn.jpg",
+    "images": { "main": "no-image.png", "thumbnail": "no-image-tn.png" },
     "price": 35000,
     "miles": 89000,
     "color": "Black",
-    "classification_id": 5
-  }
-    ,
-  {
-    "make": "Toyota",
-    "model": "Corolla",
-    "year": 2021,
-    "description": "A popular compact car known for its reliability and fuel efficiency.",
-    "image": "/images/corolla.jpg",
-    "thumbnail": "/images/corolla-tn.jpg",
-    "price": 18000,
-    "miles": 15000,
-    "color": "White",
-    "classification_id": 3
+    "classification": "Classic"
   }
 ]
