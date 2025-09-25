@@ -12,8 +12,8 @@ const app = express();
 const buildRoute = require("./routes/build-route.js");
 const carsRoute = require("./routes/cars-route");
 
-// const swaggerUi = require('swagger-ui-express');
-// const swaggerDocument = require('./swagger.json');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 
 /* ***********************
@@ -25,7 +25,7 @@ app.set("layout", "./layouts/layout") // not at views root
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 app.use('/graphql', graphqlHTTP({
   schema: schema,
   graphiql: true,
