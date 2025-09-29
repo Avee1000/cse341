@@ -33,7 +33,7 @@ app.use('/graphql', graphqlHTTP({
 
 app.use(static)
 app.get("/", utilities.handleErrors((req, res) => {
-    res.render("indxex", { title: "Home" });
+    res.render("index", { title: "Home" });
 }))
 app.use("/", contactsRoute);
 app.use("/users", usersRoute);
