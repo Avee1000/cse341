@@ -33,7 +33,7 @@ app.use('/graphql', graphqlHTTP({
 
 app.use(static)
 app.get("/", utilities.handleErrors((req, res) => {
-    res.render("indxex", { title: "Home" });
+    res.render("index", { title: "Home" });
 }))
 app.use("/", buildRoute);
 app.use("/", carsRoute);
@@ -54,10 +54,11 @@ app.use(async (req, res, next) => {
 *************************/
 app.use(async (err, req, res, next) => {
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
-  if(err.status == 404){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
+  if(err.status){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
   res.render("errors/error", {
     title: err.status || 'Server Error',
-    message
+    message: message,
+    status: err.status,
   })
 })
 
